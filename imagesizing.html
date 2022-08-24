@@ -1,0 +1,39 @@
+let imageElement = document.getElementById("image");
+let originalImageWidth = 200;
+imageElement.style.width = originalImageWidth;
+let warningMessageElement = document.getElementById("warningMessage");
+let imageWidthElement = document.getElementById("imageWidth")
+let imageWidth = 200;
+let maxWidth = 300;
+let minWidth = 100;
+imageElement.style.width = originalImageWidth + "px";
+imageWidthElement.textContent = originalImageWidth + "px";
+
+function incrementPlus() {
+    if (originalImageWidth >= maxWidth) {
+        warningMessageElement.textContent = "Image Size Above The Range";
+
+    } else {
+        originalImageWidth = originalImageWidth + 5;
+        let update = originalImageWidth + "px";
+        warningMessageElement.textContent = "";
+        imageElement.style.width = update;
+        imageWidthElement.textContent = update;
+    }
+}
+
+function OnDecrement() {
+
+    if (originalImageWidth <= 100) {
+        warningMessageElement.textContent = "Image Size Below The Range";
+
+    } else {
+        originalImageWidth = originalImageWidth - 5;
+        let update = originalImageWidth + "px";
+        warningMessageElement.textContent = "";
+        imageElement.style.width = update;
+        imageWidthElement.textContent = update;
+
+    }
+
+}
